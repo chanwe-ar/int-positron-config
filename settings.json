@@ -4,7 +4,6 @@
     "catppuccin-noctis-icons.hidesExplorerArrows": false,
     "workbench.iconTheme": "catppuccin noctis icons",
     "workbench.productIconTheme": "macos-modern",
-    "positron.r.pipe": "%>%",
     "positron.r.quietMode": true,
     "positron.r.testing": false,
     "shiny.previewType": "external",
@@ -15,7 +14,7 @@
     "window.density.editorTabHeight": "compact",
     "workbench.colorCustomizations": {},
     "[r]": {
-        "editor.formatOnSave": false,
+        "editor.formatOnSave": true,
         "editor.tabSize": 4,
         "editor.defaultFormatter": "Posit.air-vscode"
     },
@@ -51,6 +50,7 @@
         "editor.autoIndent": "advanced",
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
+    "dev.containers.enable": true,
     "dataExplorer.summaryCollapsed": true,
     "redhat.telemetry.enabled": true,
     "snowflake.connectionsConfigFile": "/Users/alejandro.abraham@scalapay.com/.snowflake/connections.toml",
@@ -69,5 +69,21 @@
     "editor.codeLensFontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
     "editor.inlayHints.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
     "diffEditor.maxComputationTime": 0,
-    "claudeCode.preferredLocation": "panel",
+    "claudeCode.preferredLocation": "sidebar",
+    "claudeCode.selectedModel": "opus",
+    "terminal.integrated.initialHint": false,
+    "Lua.workspace.supportScheme": [
+        "file",
+        "default"
+    ],
+    "atlascode.jira.enabled": false,
+    "positron.notebook.enabled": true,
+    "quartoWizard.ask.confirmInstall": "never",
+    "git.replaceTagsWhenPull": true,
+    "positron.quarto.inlineOutput.enabled": true,
+    "dataConnections.enabled": true,
+    "quarto.inlineOutput.enabled": true,
+    "quarto.useBundledQuartoInPositron": true,
+    "quarto.render.previewType": "external",
+    "notebook.defaultFormatter": "quarto.quarto",
 }
