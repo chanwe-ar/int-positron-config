@@ -1,0 +1,34 @@
+{
+  "name": "chanwe-obsidian-theme",
+  "displayName": "Chanwe Obsidian",
+  "description": "CHANWE's dark editor theme for Positron and VS Code, built from the brand tokens (Obsidiana, Obsidiana clara, Papel, Slate, the one orange).",
+  "version": "0.4.0",
+  "publisher": "chanwe-ar",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "chanwe",
+    "positron"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chanwe-ar/int-positron-config.git"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Chanwe Obsidian",
+        "uiTheme": "vs-dark",
+        "path": "./themes/chanwe-obsidian-color-theme.json"
+      }
+    ]
+  }
+}
