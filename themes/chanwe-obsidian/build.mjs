@@ -22,18 +22,18 @@ if (!nordPath) throw new Error("Nord Deep is not installed; install marlosirapua
 // Nord hex (upper-case, no alpha) -> CHANWE hex. Alpha suffixes are carried over.
 const MAP = {
   // surfaces: Nord's polar night -> obsidian greys (ink-light is the brand token)
-  "#232731": "#1C2029", // editor, side bar, panels: a touch deeper than Nord, blue removed
+  "#232731": "#191E27", // editor, side bar, panels: a touch deeper than Nord, blue removed
   "#292D38": "#232A35", // activity bar, status bar: ink-light (brand)
   "#3B4252": "#2E3542", // tabs, hover, line highlight
   "#434C5E": "#3B4453", // selection, buttons, indent guides
   "#4C566A": "#4A5567", // line numbers, borders
   // text: snow storm -> slate / paper
-  "#D8DEE9": "#CBD2DB", // body text (near rule-cool)
+  "#D8DEE9": "#D8DEE9", // body text (near rule-cool)
   "#E5E9F0": "#DDE2EA",
   "#ECEFF4": "#EEF1F5", // brightest text, used sparingly
   "#FFF": "#F8FAFC",
   "#78849B": "#7E899C", // muted text
-  "#616E88": "#6B7689", // comments (alpha kept)
+  "#616E88": "#8A94A6", // comments (alpha kept)
   // the UI accent: Nord's frost cyan -> the one orange
   "#88C0D0": "#FD3810", // badges, active tab line, progress, find match (alpha kept)
   // syntax: keep Nord's balance, warm the keywords, nudge the rest toward the brand
@@ -104,7 +104,7 @@ for (const rule of theme.tokenColors) {
 }
 // Nord uses its frost cyan both for the UI accent and for function names. The
 // accent is the orange; function names get a muted sky so code is not all orange.
-// Markdown headings keep the orange, bold: the brand's heading on a dark page.
+// Headings receive paper text and orange markers in the role-specific pass below.
 const FUNCTION = "#8FB4D4";
 for (const rule of theme.tokenColors) {
   const scopes = [].concat(rule.scope ?? []);
@@ -126,6 +126,159 @@ Object.assign(theme.colors, {
   "breadcrumb.focusForeground": "#CBD2DB",
   "breadcrumb.activeSelectionForeground": "#E8876B",
 });
+// Role-specific contrast: brand orange marks actions; paper carries titles.
+Object.assign(theme.colors, {
+  "activityBar.background": "#202630",
+  "activityBar.foreground": "#F8FAFC",
+  "activityBar.inactiveForeground": "#8A94A6",
+  "sideBar.background": "#202630",
+  "sideBar.foreground": "#C6CDD6",
+  "sideBarTitle.foreground": "#F8FAFC",
+  "sideBarSectionHeader.background": "#232A35",
+  "sideBarSectionHeader.foreground": "#F8FAFC",
+  "sideBarSectionHeader.border": "#434D5D",
+  "titleBar.activeBackground": "#202630",
+  "titleBar.activeForeground": "#F8FAFC",
+  "titleBar.inactiveBackground": "#202630",
+  "titleBar.inactiveForeground": "#8A94A6",
+  "editorGroupHeader.tabsBackground": "#202630",
+  "tab.activeBackground": "#191E27",
+  "tab.activeForeground": "#F8FAFC",
+  "tab.activeBorderTop": "#FD3810",
+  "tab.activeBorder": "#191E27",
+  "tab.inactiveBackground": "#202630",
+  "tab.inactiveForeground": "#AAB4C3",
+  "tab.unfocusedActiveForeground": "#D8DEE9",
+  "panel.background": "#191E27",
+  "panelTitle.activeForeground": "#F8FAFC",
+  "panelTitle.inactiveForeground": "#AAB4C3",
+  "panelTitle.activeBorder": "#FD3810",
+  "notificationCenterHeader.foreground": "#F8FAFC",
+  "statusBar.background": "#202630",
+  "statusBar.foreground": "#C6CDD6",
+  "statusBar.noFolderBackground": "#202630",
+  "statusBar.debuggingBackground": "#202630",
+  "statusBar.debuggingForeground": "#F8FAFC",
+  "button.background": "#FD3810",
+  "button.foreground": "#FFFFFF",
+  "button.hoverBackground": "#FF542F",
+  "button.secondaryBackground": "#3B4453",
+  "button.secondaryForeground": "#F8FAFC",
+  "button.secondaryHoverBackground": "#4A5567",
+  "badge.foreground": "#FFFFFF",
+  "activityBarBadge.foreground": "#FFFFFF",
+  "focusBorder": "#FD3810",
+  "list.activeSelectionBackground": "#373F4E",
+  "list.activeSelectionForeground": "#F8FAFC",
+  "list.focusBackground": "#2E3542",
+  "list.focusForeground": "#F8FAFC",
+  "list.focusOutline": "#FD3810",
+  "list.highlightForeground": "#FF9478",
+  "list.focusHighlightForeground": "#FF9478",
+  "editorSuggestWidget.selectedForeground": "#F8FAFC",
+  "editorSuggestWidget.highlightForeground": "#FF9478",
+  "editorSuggestWidget.focusHighlightForeground": "#FF9478",
+  "textLink.foreground": "#FF9478",
+  "textLink.activeForeground": "#FF9478",
+  "editorLink.activeForeground": "#FF9478",
+  "notificationLink.foreground": "#FF9478",
+  "selection.background": "#434D5D80",
+  "editor.selectionBackground": "#434D5D",
+  "editor.inactiveSelectionBackground": "#434D5D80",
+  "editor.lineHighlightBackground": "#232A3566",
+  "editor.lineHighlightBorder": "#232A3500",
+  "editor.wordHighlightBackground": "#8FB4D41A",
+  "editor.wordHighlightStrongBackground": "#8FB4D42A",
+  "editor.findMatchBackground": "#FD381026",
+  "editor.findMatchBorder": "#FD3810",
+  "editor.findMatchHighlightBackground": "#FD381014",
+  "editor.findMatchHighlightBorder": "#FD381080",
+  "editor.findRangeHighlightBackground": "#FD38100A",
+  "editorLineNumber.foreground": "#8A94A6",
+  "editorLineNumber.activeForeground": "#F8FAFC",
+  "editorCodeLens.foreground": "#8A94A6",
+  "descriptionForeground": "#AAB4C3",
+  "disabledForeground": "#8A94A6",
+  "input.placeholderForeground": "#AAB4C3",
+  "input.border": "#434D5D",
+  "inputOption.activeBackground": "#FD381026",
+  "inputOption.activeBorder": "#FD3810",
+  "inputOption.activeForeground": "#F8FAFC",
+  "inputValidation.errorBackground": "#35232B",
+  "inputValidation.errorForeground": "#F8FAFC",
+  "inputValidation.warningBackground": "#342E24",
+  "inputValidation.warningForeground": "#F8FAFC",
+  "terminal.ansiBlue": "#8FB4D4",
+  "terminal.ansiBrightBlue": "#B4CEE5",
+  "terminal.foreground": "#D8DEE9",
+  "terminal.background": "#191E27",
+  "editorIndentGuide.background1": "#434D5D80",
+  "editorIndentGuide.activeBackground1": "#8A94A6",
+  "breadcrumb.foreground": "#AAB4C3",
+  "breadcrumb.focusForeground": "#F8FAFC",
+});
+for (const rule of theme.tokenColors) {
+  const scopes = [].concat(rule.scope ?? []);
+  if (scopes.some((scope) => scope.includes("comment") || scope === "markup.quote" || scope.endsWith("markup.quote"))) {
+    if (rule.settings.foreground?.startsWith("#8A94A6")) rule.settings.foreground = "#8A94A6";
+  }
+  if (scopes.includes("markup.heading")) rule.settings = { foreground: "#F8FAFC", fontStyle: "bold" };
+}
+theme.tokenColors.push({
+  name: "Chanwe heading markers",
+  scope: ["punctuation.definition.heading.markdown", "punctuation.definition.heading.quarto"],
+  settings: { foreground: "#FD3810", fontStyle: "bold" },
+});
+
+// Positron registers these independently of the VS Code workbench palette.
+Object.assign(theme.colors, {
+  "positronActionBar.background": "#232A35",
+  "positronActionBar.foreground": "#F8FAFC",
+  "positronActionBar.disabledForeground": "#8A94A6",
+  "positronActionBar.border": "#434D5D",
+  "positronActionBar.textInputBackground": "#191E27",
+  "positronActionBar.textInputBorder": "#434D5D",
+  "positronConsole.background": "#191E27",
+  "positronConsole.foreground": "#D8DEE9",
+  "positronConsole.errorBackground": "#35232B",
+  "positronConsole.errorForeground": "#F0A09B",
+  "positronVariables.background": "#191E27",
+  "positronVariables.foreground": "#D8DEE9",
+  "positronVariables.headerBackground": "#232A35",
+  "positronVariables.border": "#434D5D",
+  "positronVariables.rowHoverBackground": "#232A35",
+  "positronVariables.rowHoverForeground": "#F8FAFC",
+  "positronVariables.activeSelectionBackground": "#373F4E",
+  "positronVariables.activeSelectionForeground": "#F8FAFC",
+  "positronVariables.inactiveSelectionBackground": "#2E3542",
+  "positronVariables.inactiveSelectionForeground": "#D8DEE9",
+  "positronDataExplorer.background": "#191E27",
+  "positronDataExplorer.contrastBackground": "#232A35",
+  "positronDataExplorer.foreground": "#D8DEE9",
+  "positronDataExplorer.border": "#434D5D",
+  "positronDataExplorer.selectionBackground": "#373F4E",
+  "positronDataExplorer.sparklineStroke": "#8FB4D4",
+  "positronDataExplorer.sparklineHover": "#FD3810",
+  "positronDataGrid.foreground": "#D8DEE9",
+  "positronDataGrid.contrastBackground": "#232A35",
+  "positronDataGrid.border": "#434D5D",
+  "positronDataGrid.cursorBorder": "#FD3810",
+  "positronDataGrid.selectionBorder": "#FD3810",
+  "positronDataGrid.selectionBackground": "#434D5D80",
+  "positronPackages.background": "#191E27",
+  "positronPackages.foreground": "#D8DEE9",
+  "positronPackages.border": "#434D5D",
+  "positronPlots.background": "#191E27",
+  "positronModalDialog.titleBarForeground": "#F8FAFC",
+  "positronModalDialog.titleBarBackground": "#202630",
+  "positronModalDialog.defaultButtonBackground": "#FD3810",
+  "positronModalDialog.defaultButtonHoverBackground": "#FF542F",
+  "positronModalDialog.defaultButtonForeground": "#FFFFFF",
+});
+for (const [key, value] of Object.entries(theme.colors)) {
+  if (key.startsWith("terminal.ansi")) theme.colors[key.replace("terminal.", "positronConsole.")] = value;
+}
+
 const out = join(here, "themes/chanwe-obsidian-color-theme.json");
 writeFileSync(out, JSON.stringify(theme, null, 2) + "\n");
 const missing = new Set();

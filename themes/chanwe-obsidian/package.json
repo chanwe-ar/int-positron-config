@@ -2,7 +2,7 @@
   "name": "chanwe-obsidian-theme",
   "displayName": "Chanwe Obsidian",
   "description": "CHANWE's dark editor theme for Positron and VS Code, built from the brand tokens (Obsidiana, Obsidiana clara, Papel, Slate, the one orange).",
-  "version": "0.4.0",
+  "version": "0.5.3",
   "publisher": "chanwe-ar",
   "license": "UNLICENSED",
   "private": true,
