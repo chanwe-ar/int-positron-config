@@ -1,3 +1,8 @@
 *.vsix
 node_modules/
 .DS_Store
+
+# local environment files (.env.example is the committed template)
+.env
+.env.*
+!.env.example
