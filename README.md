@@ -11,7 +11,7 @@ This repository is a reproducible snapshot of Alejandro's user-level Positron co
 | `extensions.txt` | Positron CLI extension inventory | Active extension IDs pinned to their installed versions |
 | `themes/chanwe-obsidian/` | `~/.positron/extensions` and `~/.vscode/extensions` (installed as a `.vsix`) | **Chanwe Obsidian**, the CHANWE dark colour theme for Positron and VS Code: Nord Deep retuned to the brand. See its `README.md` |
 
-The snapshot was refreshed on 2026-08-15. The Snowflake setting contains only the local path to `connections.toml`; the connection file and its credentials are not tracked.
+No environment variables are read (see `.env.example`). The snapshot was refreshed on 2026-08-15. The Snowflake setting contains only the local path to `connections.toml`; the connection file and its credentials are not tracked.
 
 ## Software versions
 
